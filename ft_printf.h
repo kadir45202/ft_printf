@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kcetin <kcetin@student.42istanbul.com.t    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/03 18:51:06 by kcetin            #+#    #+#             */
+/*   Updated: 2022/02/03 18:51:07 by kcetin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_PRINTF_H
 #define FT_PRINTF_H
 
 #include <stdarg.h>
 
-void	ft_putchar(char c);
+int	putchar(char c);
 
 #endif

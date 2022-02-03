@@ -6,13 +6,13 @@
 /*   By: kcetin <kcetin@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 13:56:44 by kcetin            #+#    #+#             */
-/*   Updated: 2022/02/03 15:42:18 by kcetin           ###   ########.fr       */
+/*   Updated: 2022/02/03 19:07:44 by kcetin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int	ft_putchar(char c)
+int	putchar(char c)
 {
 	write(1, &c, 1);
 	return (1);
@@ -54,3 +54,13 @@ void	putnbr(int i)
 
 //pointer eksik
 
+void	u_putnbr(unsigned int i)
+{
+	if (i >= 10)
+	{
+		putnbr(i / 10);
+		putnbr(i % 10);
+	}
+	else
+		putchar(i + '0');
+}
