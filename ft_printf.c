@@ -6,7 +6,7 @@
 /*   By: kcetin <kcetin@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 12:37:47 by kcetin            #+#    #+#             */
-/*   Updated: 2022/02/04 13:51:38 by kcetin           ###   ########.fr       */
+/*   Updated: 2022/02/12 22:59:44 by kcetin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,26 @@
 
 int	kind(char a, va_list args)
 {
-	int	toplam;
+	int	len;
 
-	toplam = 0;
+	len = 0;
 	if (a == 'd' || a == 'i')
-		toplam += putnbr(va_arg(args, int ));
+		len += putnbr(va_arg(args, int ));
 	else if (a == 'c')
-		toplam += putchar(a);
+		len += ft_putchar(a);
 	else if (a == 's')
-		toplam += strchr(va_arg(args, char *));
+		len += putstr(va_arg(args,const char *));
 	else if (a == '%')
-		toplam += putchar('%');
+		len += ft_putchar('%');
 	else if (a == 'u')
-		toplam += u_putnbr(va_arg(args, unsigned int));
-	return (toplam);
+		len += unsigned_putnbr(va_arg(args, unsigned int));
+	else if (a == 'p')
+		len += pointer(va_arg(args, unsigned long), "0123456789abcdef");
+	else if (a == 'x')
+		len += hex_putnbr(va_arg(args, unsigned int), "0123456789abcdef");
+	else if (a == 'X')
+		len += hex_putnbr(va_arg(args, unsigned int), "0123456789ABCDEF");
+	return (len);
 }
 
 int	ft_printf(const char *s, ...)
@@ -46,7 +52,7 @@ int	ft_printf(const char *s, ...)
 			toplam += kind(s[i++], args);
 		}
 		else
-			toplam += putchar(s[i]);
+			toplam += ft_putchar(s[i]);
 		i++;
 	}
 	return (toplam);
