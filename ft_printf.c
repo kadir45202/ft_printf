@@ -6,7 +6,7 @@
 /*   By: kcetin <kcetin@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 12:37:47 by kcetin            #+#    #+#             */
-/*   Updated: 2022/02/12 22:59:44 by kcetin           ###   ########.fr       */
+/*   Updated: 2022/02/13 00:02:35 by kcetin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	kind(char a, va_list args)
 	else if (a == 'c')
 		len += ft_putchar(a);
 	else if (a == 's')
-		len += putstr(va_arg(args,const char *));
+		len += putstr(va_arg(args, const char *));
 	else if (a == '%')
 		len += ft_putchar('%');
 	else if (a == 'u')
@@ -49,7 +49,8 @@ int	ft_printf(const char *s, ...)
 	{
 		if (s[i] == '%')
 		{
-			toplam += kind(s[i++], args);
+			toplam += kind(s[i + 1], args);
+			i++;
 		}
 		else
 			toplam += ft_putchar(s[i]);

@@ -6,7 +6,7 @@
 /*   By: kcetin <kcetin@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 22:28:37 by kcetin            #+#    #+#             */
-/*   Updated: 2022/02/12 23:00:47 by kcetin           ###   ########.fr       */
+/*   Updated: 2022/02/12 23:55:09 by kcetin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	main()
 {
-		printf("sa\n");
-		ft_printf("sa");
+	int *i;
+		ft_printf("%p\n", i);
 	return 0;
 }

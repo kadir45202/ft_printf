@@ -6,7 +6,7 @@
 /*   By: kcetin <kcetin@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 18:51:06 by kcetin            #+#    #+#             */
-/*   Updated: 2022/02/12 22:59:20 by kcetin           ###   ########.fr       */
+/*   Updated: 2022/02/13 00:02:09 by kcetin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdlib.h>
 
 int	kind(char a, va_list args);
-int ft_printf(const char *s, ...);
+int	ft_printf(const char *s, ...);
 int	putstr(const char *s);
 int	ft_strlen(const char *s);
 int	hex_putnbr(unsigned int n, char *hex);
