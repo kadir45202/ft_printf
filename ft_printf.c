@@ -6,7 +6,7 @@
 /*   By: kcetin <kcetin@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 12:37:47 by kcetin            #+#    #+#             */
-/*   Updated: 2022/02/13 00:02:35 by kcetin           ###   ########.fr       */
+/*   Updated: 2022/02/13 12:18:50 by kcetin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int	kind(char a, va_list args)
 	if (a == 'd' || a == 'i')
 		len += putnbr(va_arg(args, int ));
 	else if (a == 'c')
-		len += ft_putchar(a);
+		len += ft_putchar(va_arg(args, int));
 	else if (a == 's')
-		len += putstr(va_arg(args, const char *));
+		len += ft_print_str(va_arg(args, char *));
 	else if (a == '%')
 		len += ft_putchar('%');
 	else if (a == 'u')

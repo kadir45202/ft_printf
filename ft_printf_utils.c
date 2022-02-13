@@ -6,7 +6,7 @@
 /*   By: kcetin <kcetin@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 13:56:44 by kcetin            #+#    #+#             */
-/*   Updated: 2022/02/12 22:59:56 by kcetin           ###   ########.fr       */
+/*   Updated: 2022/02/13 12:12:57 by kcetin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,33 @@ int	ft_strlen(const char *s)
 	return (i);
 }
 
-int	putstr(const char *s)
+int	ft_print_str(char *str)
 {
 	int	i;
 
-	i = ft_strlen(s);
-	write(1, s, i);
-	return (1);
+	i = 0;
+	if (str == NULL)
+	{
+		ft_putstr("(null)");
+		return (6);
+	}
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+	return (i);
+}
+
+int	ft_putstr(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+	return (i);
 }
